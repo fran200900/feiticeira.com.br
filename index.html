@@ -27,20 +27,17 @@
       overflow: hidden;
     }
 
-    /* =========================
-       SITE PRINCIPAL
-       ========================= */
+    /* SITE PRINCIPAL */
 
     .site-frame {
       width: 100%;
       height: 100vh;
+      height: 100dvh;
       border: 0;
       display: block;
     }
 
-    /* =========================
-       BANNER DE ENTRADA
-       ========================= */
+    /* BANNER DE ENTRADA */
 
     .banner-overlay {
       position: fixed;
@@ -60,6 +57,7 @@
 
       width: min(900px, 95vw);
       max-height: 85vh;
+      max-height: 85dvh;
 
       background: #fff;
       border-radius: 12px;
@@ -74,6 +72,7 @@
       width: 100%;
       height: auto;
       max-height: 85vh;
+      max-height: 85dvh;
 
       object-fit: contain;
     }
@@ -111,9 +110,7 @@
       background: #000;
     }
 
-    /* =========================
-       GRUPO DE PALPITES
-       ========================= */
+    /* GRUPO DE PALPITES */
 
     .whatsapp-box {
       position: fixed;
@@ -133,7 +130,6 @@
       z-index: 9999;
 
       cursor: pointer;
-
       font-family: Arial, sans-serif;
 
       transition:
@@ -200,9 +196,7 @@
       font-weight: 700;
     }
 
-    /* =========================
-       BOTÃO PUXADA
-       ========================= */
+    /* FERRAMENTA DE PUXADA */
 
     .puxada-box {
       position: fixed;
@@ -213,20 +207,15 @@
       width: 300px;
 
       background: #fff;
-
       border-radius: 14px;
 
-      box-shadow:
-        0 5px 25px rgba(0, 0, 0, 0.30);
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.30);
 
       z-index: 9998;
-
       font-family: Arial, sans-serif;
 
       overflow: hidden;
     }
-
-    /* Cabeçalho */
 
     .puxada-header {
       position: relative;
@@ -239,8 +228,6 @@
       font-size: 18px;
       font-weight: 700;
     }
-
-    /* X */
 
     .puxada-close {
       position: absolute;
@@ -255,7 +242,6 @@
       background: transparent;
 
       color: #fff;
-
       font-size: 23px;
 
       cursor: pointer;
@@ -264,8 +250,6 @@
     .puxada-close:hover {
       color: #ccc;
     }
-
-    /* Área de pesquisa */
 
     .puxada-content {
       padding: 15px;
@@ -280,7 +264,6 @@
 
     .puxada-search input {
       width: 100%;
-
       height: 44px;
 
       padding: 0 45px 0 13px;
@@ -289,7 +272,6 @@
       border-radius: 9px;
 
       outline: none;
-
       font-size: 15px;
     }
 
@@ -299,23 +281,18 @@
 
     .search-icon {
       position: absolute;
-
       right: 13px;
 
       color: #555;
-
       font-size: 20px;
 
       pointer-events: none;
     }
 
-    /* Resultados */
-
     .puxada-resultados {
       margin-top: 15px;
 
       max-height: 250px;
-
       overflow-y: auto;
     }
 
@@ -323,7 +300,6 @@
       margin-bottom: 10px;
 
       color: #222;
-
       font-size: 14px;
       font-weight: 700;
     }
@@ -332,11 +308,9 @@
       display: inline-block;
 
       margin: 4px 3px;
-
       padding: 8px 11px;
 
       background: #f1f1f1;
-
       color: #222;
 
       border-radius: 8px;
@@ -358,17 +332,13 @@
 
     .sem-resultado {
       color: #777;
-
       font-size: 13px;
       line-height: 1.5;
     }
 
-    /* =========================
-       RESPONSIVO
-       ========================= */
+    /* AJUSTES PARA CELULAR */
 
     @media (max-width: 600px) {
-
       .banner-overlay {
         padding: 10px;
       }
@@ -376,10 +346,12 @@
       .banner {
         width: 96vw;
         max-height: 75vh;
+        max-height: 75dvh;
       }
 
       .banner-image {
         max-height: 75vh;
+        max-height: 75dvh;
       }
 
       .whatsapp-box {
@@ -396,6 +368,14 @@
 
         width: 290px;
         max-width: calc(100vw - 24px);
+
+        max-height: 45vh;
+        max-height: 45dvh;
+        overflow-y: auto;
+      }
+
+      .puxada-resultados {
+        max-height: 180px;
       }
     }
   </style>
@@ -403,20 +383,17 @@
 
 <body>
 
-  <!-- =================================
-       SITE PRINCIPAL
-       ================================= -->
+  <!-- SITE PRINCIPAL COM PERMISSÕES DE ÁREA DE TRANSFERÊNCIA -->
 
   <iframe
     class="site-frame"
     src="https://app.feiticeira.club/pr/2iCVbLKr"
+    title="Plataforma Feiticeira"
+    allow="clipboard-read; clipboard-write; fullscreen"
     allowfullscreen>
   </iframe>
 
-
-  <!-- =================================
-       BANNER DE ENTRADA
-       ================================= -->
+  <!-- BANNER DE ENTRADA -->
 
   <div
     class="banner-overlay"
@@ -438,6 +415,7 @@
       </a>
 
       <button
+        type="button"
         class="banner-close"
         id="bannerClose"
         aria-label="Fechar banner">
@@ -445,13 +423,9 @@
       </button>
 
     </div>
-
   </div>
 
-
-  <!-- =================================
-       GRUPO DE PALPITES
-       ================================= -->
+  <!-- GRUPO DE PALPITES -->
 
   <div
     class="whatsapp-box"
@@ -459,6 +433,7 @@
     onclick="abrirWhatsApp(event)">
 
     <button
+      type="button"
       class="close-button"
       onclick="fecharInformativo(event)"
       aria-label="Fechar">
@@ -476,13 +451,9 @@
     <div class="whatsapp-button">
       Entrar no grupo
     </div>
-
   </div>
 
-
-  <!-- =================================
-       PUXADA
-       ================================= -->
+  <!-- FERRAMENTA DE PUXADA -->
 
   <div
     class="puxada-box"
@@ -493,6 +464,7 @@
       PUXADA
 
       <button
+        type="button"
         class="puxada-close"
         onclick="fecharPuxada(event)"
         aria-label="Fechar Puxada">
@@ -526,17 +498,11 @@
         </div>
 
       </div>
-
     </div>
-
   </div>
 
-
   <script>
-
-    /* =========================
-       BANNER
-       ========================= */
+    /* FECHAR BANNER */
 
     document
       .getElementById("bannerClose")
@@ -548,20 +514,14 @@
         document
           .getElementById("bannerOverlay")
           .style.display = "none";
-
       });
 
-
-    /* =========================
-       WHATSAPP
-       ========================= */
+    /* WHATSAPP */
 
     const whatsappLink =
       "https://chat.whatsapp.com/CaY60otbPRkEJL0n5Hhnvm";
 
-
     function abrirWhatsApp(event) {
-
       if (event.target.closest(".close-button")) {
         return;
       }
@@ -569,9 +529,7 @@
       window.location.href = whatsappLink;
     }
 
-
     function fecharInformativo(event) {
-
       event.stopPropagation();
 
       document
@@ -579,10 +537,7 @@
         .style.display = "none";
     }
 
-
-    /* =========================
-       PUXADA
-       ========================= */
+    /* DADOS DA FERRAMENTA DE PUXADA */
 
     const animais = {
 
@@ -765,35 +720,25 @@
         "Avestruz",
         "Carneiro"
       ]
-
     };
 
-
-    /* =========================
-       NORMALIZAR TEXTO
-       ========================= */
+    /* NORMALIZAR TEXTO */
 
     function normalizarTexto(texto) {
-
       return texto
         .toLowerCase()
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
         .trim();
-
     }
 
-
-    /* =========================
-       PESQUISA
-       ========================= */
+    /* PESQUISA DE ANIMAIS */
 
     const animalInput =
       document.getElementById("animalInput");
 
     const resultados =
       document.getElementById("resultados");
-
 
     animalInput.addEventListener("input", function() {
 
@@ -802,9 +747,7 @@
 
       resultados.innerHTML = "";
 
-
       if (!busca) {
-
         resultados.innerHTML = `
           <div class="sem-resultado">
             Digite um animal para consultar suas opções.
@@ -814,33 +757,18 @@
         return;
       }
 
-
-      /*
-       * Procura o animal digitado.
-       */
-
       const animalEncontrado =
         Object.keys(animais).find(animal => {
-
           return normalizarTexto(animal) === busca;
-
         });
-
 
       if (!animalEncontrado) {
 
-        /*
-         * Permite também pesquisar parcialmente.
-         */
-
         const sugestoes =
           Object.keys(animais).filter(animal => {
-
             return normalizarTexto(animal)
               .includes(busca);
-
           });
-
 
         if (sugestoes.length > 0) {
 
@@ -855,29 +783,22 @@
             const item =
               document.createElement("span");
 
-            item.className =
-              "animal-result";
+            item.className = "animal-result";
 
             item.textContent =
               animal.charAt(0).toUpperCase()
               + animal.slice(1);
 
             item.onclick = function() {
-
-              animalInput.value =
-                animal;
-
+              animalInput.value = animal;
               mostrarResultados(animal);
-
             };
 
             resultados.appendChild(item);
-
           });
 
           return;
         }
-
 
         resultados.innerHTML = `
           <div class="sem-resultado">
@@ -888,57 +809,42 @@
         return;
       }
 
-
       mostrarResultados(animalEncontrado);
-
     });
 
-
-    /* =========================
-       MOSTRAR RESULTADOS
-       ========================= */
+    /* MOSTRAR RESULTADOS */
 
     function mostrarResultados(animal) {
 
       resultados.innerHTML = `
         <div class="resultado-titulo">
-          Opções para ${animal.charAt(0).toUpperCase() + animal.slice(1)}:
+          Opções para ${
+            animal.charAt(0).toUpperCase() + animal.slice(1)
+          }:
         </div>
       `;
-
 
       animais[animal].forEach(opcao => {
 
         const item =
           document.createElement("span");
 
-        item.className =
-          "animal-result";
-
-        item.textContent =
-          opcao;
+        item.className = "animal-result";
+        item.textContent = opcao;
 
         resultados.appendChild(item);
-
       });
-
     }
 
-
-    /* =========================
-       FECHAR PUXADA
-       ========================= */
+    /* FECHAR FERRAMENTA DE PUXADA */
 
     function fecharPuxada(event) {
-
       event.stopPropagation();
 
       document
         .getElementById("puxadaBox")
         .style.display = "none";
-
     }
-
   </script>
 
 </body>
